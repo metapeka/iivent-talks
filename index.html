@@ -47,6 +47,21 @@
     <a class="s" href="talks/o2.html">О2</a>
   </nav>
 
+  <div class="toolbar">
+    <div class="filter-bar" role="group" aria-label="Фильтр программы">
+      <button class="filter-btn is-active" data-filter="all" type="button">Все 24</button>
+      <button class="filter-btn" data-filter="a" type="button">Зал 1 · <span>Что меняется</span></button>
+      <button class="filter-btn" data-filter="b" type="button">Зал 2 · <span>Как внедрять</span></button>
+      <button class="filter-btn mine" data-filter="mine" type="button">★ Мои 6</button>
+    </div>
+    <label class="search-wrap" aria-label="Поиск">
+      <input id="searchInput" type="search" placeholder="Поиск по тезисам, заголовкам…" autocomplete="off" spellcheck="false">
+      <span class="search-icon">⌕</span>
+      <button class="search-clear" id="clearSearch" type="button" aria-label="Очистить поиск">×</button>
+    </label>
+  </div>
+  <div class="results-info" id="resultsInfo" aria-live="polite"></div>
+
   <h2 class="sec hall-s">Общий старт <small>10:50–11:55</small></h2>
   <div class="talks">
     <a class="talk wide" href="talks/o1.html">
