@@ -1,13 +1,27 @@
 (function(){
   var btn = document.getElementById('themeBtn');
   var root = document.documentElement;
-  try { var s = localStorage.getItem('iivent-theme'); if (s) root.setAttribute('data-theme', s); } catch(e){}
+  // Light is default — dark only if explicitly chosen
+  try {
+    var s = localStorage.getItem('iivent-theme');
+    if (s === 'dark' || s === 'light') root.setAttribute('data-theme', s);
+    else root.setAttribute('data-theme', 'light');
+  } catch(e){ root.setAttribute('data-theme','light'); }
+
+  function updateBtn(){
+    if (!btn) return;
+    var isDark = root.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀' : '◐';
+    btn.setAttribute('aria-label', isDark ? 'Включить светлую тему' : 'Включить тёмную тему');
+    btn.setAttribute('title', isDark ? 'Светлая тема' : 'Тёмная тема');
+  }
+  updateBtn();
   if (btn) btn.addEventListener('click', function(){
-    var isDark = root.getAttribute('data-theme') === 'dark' ||
-      (!root.hasAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var isDark = root.getAttribute('data-theme') === 'dark';
     var next = isDark ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('iivent-theme', next); } catch(e){}
+    updateBtn();
   });
 
   // Reading progress bar for talk pages

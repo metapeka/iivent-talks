@@ -1,6 +1,6 @@
 /* ===== ИИВЕНТ · LIGHT TECH AI REDESIGN ===== */
 :root{
-  color-scheme:light;
+  color-scheme:light only;
   --bg:#F6F8FB;
   --bg-grid:radial-gradient(circle at 1px 1px, rgba(37,99,235,.07) 1px, transparent 0);
   --surface:#FFFFFF;
@@ -33,32 +33,6 @@
   --f-body:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
-  --bg:#0B0F1A;
-  --bg-grid:radial-gradient(circle at 1px 1px, rgba(99,102,241,.10) 1px, transparent 0);
-  --surface:#111827;
-  --surface-muted:#1E293B;
-  --surface-elev:#1F2937;
-  --ink:#F1F5F9;
-  --ink-soft:#CBD5E1;
-  --muted:#94A3B8;
-  --muted-2:#64748B;
-  --line:#1E293B;
-  --line-strong:#334155;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
-  --shadow:0 4px 10px rgba(0,0,0,.4);
-  --shadow-lg:0 10px 20px rgba(0,0,0,.5);
-  --h1:#818CF8;
-  --h1-soft:#1E1B4B;
-  --h2:#22D3EE;
-  --h2-soft:#042F3E;
-  --shared:#CBD5E1;
-  --shared-soft:#1E293B;
-  --sel:#FBBF24;
-  --warn:#FBBF24;
-  --warn-soft:#451A03;
-}}
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#0B0F1A;
