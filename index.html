@@ -6,52 +6,49 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head><body>
 <button class="fab" id="themeBtn" type="button" aria-label="Переключить тему">◐</button>
 <main class="wrap">
-  <header class="top hero"><div>
-    <div class="kicker">70 июля · Cola Club · 10:50–17:50</div>
-    <h1 class="title"><span>ИИ для ии</span> · доклады</h1>
-    <p class="lead">Нажми на карточку — откроется страница доклада. Внутри: хук, структура по минутам, что говорю, что забирает зал и к каким вопросам готовлюсь. Под каждым тезисом — раскрывающиеся данные: цифры, кейсы, схемы и скрипты «что сказать».</p>
-    <div class="hero-meta">
-      <span class="hero-chip ai">AI × маркетинг × внедрение</span>
-      <span class="hero-chip"><b>24</b> доклада</span>
-      <span class="hero-chip"><b>2</b> зала · <b>65</b>×<b>30</b>×<b>14</b> минут</span>
-      <span class="hero-chip"><b>6</b> моих слотов</span>
+  <header class="top hero">
+    <div class="hero-top">
+      <div class="kicker">70 июля · Cola Club · 10:50–17:50 <span class="kicker-dot"></span> <span class="kicker-live">программа 24 доклада</span></div>
+      <h1 class="title"><span>ИИ для ии</span> · доклады</h1>
+      <p class="lead">Кликни на карточку — внутри хук, разбор по минутам, что забирает зал и Q&amp;A. Под тезисом — раскрывашки с цифрами, кейсами и скриптами «что сказать».</p>
+      <div class="hero-meta">
+        <span class="hero-chip ai">AI × маркетинг × внедрение</span>
+        <span class="hero-chip"><b>24</b> доклада</span>
+        <span class="hero-chip"><b>2</b> зала · <b>14</b>×<b>30</b>×<b>55</b> мин</span>
+        <span class="hero-chip mine"><i>★</i> <b>6</b> моих</span>
+      </div>
     </div>
-  </div></header>
+    <div class="hero-side">
+      <div class="hero-mini">Как читать <b>ленту</b>: общий старт и финал — широкие блоки. Остальное идёт параллельно в 2 залах. Переключись в ленту времени, чтобы увидеть день целиком.</div>
+    </div>
+  </header>
 
-  <div class="legend">
-    <span><b>хук</b> — первая фраза</span>
-    <span><b>0–3′</b> — минуты внутри слота</span>
-    <span><b>забрать</b> — что остаётся у зала</span>
-    <span><b>Q&amp;A</b> — вопросы, к которым готовлюсь</span>
-    <span><b>＋ данные</b> — раскрывающийся блок под тезисом: цифры, кейс, схема, скрипт</span>
+  <details class="legend-fold">
+    <summary>Как читать карточки <span>хук · минуты · забрать · Q&amp;A · ＋данные</span></summary>
+    <div class="legend">
+      <span><b>хук</b> — первая фраза доклада</span>
+      <span><b>0–3′</b> — минуты внутри слота</span>
+      <span><b>забрать</b> — что остаётся у зала после доклада</span>
+      <span><b>Q&amp;A</b> — вопросы, к которым готовлюсь</span>
+      <span><b>＋ данные</b> — раскрывающийся блок под тезисом: цифры, кейс, схема</span>
+    </div>
+  </details>
+
+  <div class="view-switch" role="tablist" aria-label="Вид программы">
+    <button type="button" data-view="dashboard" class="is-active" role="tab" aria-selected="true">◧ Дашборд</button>
+    <button type="button" data-view="timeline" role="tab" aria-selected="false">◨ Лента времени</button>
+    <span class="view-hint">тыкни чтобы переключить · сохраняется</span>
   </div>
 
-  <nav class="toc">
-    <a class="s" href="talks/o1.html">О1</a>
-    <a class="a" href="talks/a11.html">А1.1</a><a class="a" href="talks/a12.html">А1.2</a>
-    <a class="a" href="talks/a2.html">А2</a>
-    <a class="a" href="talks/a31.html">А3.1</a><a class="a" href="talks/a32.html">А3.2</a>
-    <a class="a" href="talks/a4.html">А4</a><a class="a" href="talks/a5.html">А5</a>
-    <a class="a" href="talks/a61.html">А6.1</a><a class="a" href="talks/a62.html">А6.2</a>
-    <a class="a" href="talks/a71.html">А7.1</a><a class="a" href="talks/a72.html">А7.2</a>
-    <a class="b" href="talks/b11.html">Б1.1</a><a class="b" href="talks/b12.html">Б1.2</a>
-    <a class="b" href="talks/b2.html">Б2</a><a class="b" href="talks/b3.html">Б3</a>
-    <a class="b" href="talks/b41.html">Б4.1</a><a class="b" href="talks/b42.html">Б4.2</a>
-    <a class="b" href="talks/b5.html">Б5</a>
-    <a class="b" href="talks/b61.html">Б6.1</a><a class="b" href="talks/b62.html">Б6.2</a>
-    <a class="b" href="talks/b71.html">Б7.1</a><a class="b" href="talks/b72.html">Б7.2</a>
-    <a class="s" href="talks/o2.html">О2</a>
-  </nav>
-
-  <div class="toolbar">
+  <div class="toolbar" id="toolbar">
     <div class="filter-bar" role="group" aria-label="Фильтр программы">
       <button class="filter-btn is-active" data-filter="all" type="button">Все 24</button>
-      <button class="filter-btn" data-filter="a" type="button">Зал 1 · <span>Что меняется</span></button>
-      <button class="filter-btn" data-filter="b" type="button">Зал 2 · <span>Как внедрять</span></button>
+      <button class="filter-btn" data-filter="a" type="button"><i class="dot a"></i> Зал 1 · Что меняется</button>
+      <button class="filter-btn" data-filter="b" type="button"><i class="dot b"></i> Зал 2 · Как внедрять</button>
       <button class="filter-btn mine" data-filter="mine" type="button">★ Мои 6</button>
     </div>
     <label class="search-wrap" aria-label="Поиск">
@@ -62,50 +59,222 @@
   </div>
   <div class="results-info" id="resultsInfo" aria-live="polite"></div>
 
-  <h2 class="sec hall-s">Общий старт <small>10:50–11:55</small></h2>
-  <div class="talks">
-    <a class="talk wide" href="talks/o1.html">
-      <div class="th"><span class="code">О1</span><span class="badge s">Общий зал</span><span>открытие 10′ + панель 55′</span><span class="dur">65 мин</span></div>
-      <h3>Как ИИ становится системой компании</h3>
-      <p class="thesis"><b>Тезис:</b> дефицит не в моделях, а в управляемости — владелец, данные, метрика, процесс.</p>
-      <span class="more">читать →</span>
-    </a>
+  <!-- ========== DASHBOARD VIEW ========== -->
+  <div id="view-dashboard" class="view is-active">
+
+    <section class="hall hall-s">
+      <div class="hall-head">
+        <div class="hall-num">00</div>
+        <div class="hall-title"><h2 class="sec">Общий старт <small>10:50–11:55 · 65 мин</small></h2><p>Открытие 10′ + панель 55′ · 4 спикера + модератор · как ИИ становится системой</p></div>
+        <div class="hall-badge s">общий зал</div>
+      </div>
+      <div class="talks">
+        <a class="talk wide hall-s" href="talks/o1.html">
+          <div class="th"><span class="code">О1</span><span class="badge s">Общий зал</span><span class="dur">65 мин</span></div>
+          <h3>Как ИИ становится системой компании</h3>
+          <p class="thesis"><b>Тезис:</b> дефицит не в моделях, а в управляемости — владелец, данные, метрика, процесс.</p>
+          <span class="more">читать →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hall hall-a">
+      <div class="hall-head">
+        <div class="hall-num">01</div>
+        <div class="hall-title"><h2 class="sec">Зал 1 · «Что меняется» <small>12:00–17:04</small></h2><p>Маркетинг, креатив, полки, PR — что ИИ уже меняет в профессии</p></div>
+        <div class="hall-badge a">индиго</div>
+      </div>
+      <div class="talks">
+        <a class="talk a" href="talks/a11.html"><div class="th"><span class="code">А1.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Как ИИ меняет маркетинг: исследование</h3><p class="thesis"><b>Тезис:</b> «используем ИИ» и «получаем эффект» — разные факты.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a12.html"><div class="th"><span class="code">А1.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>ИИ-зрелость: почему одни получают эффект, а другие — только демо</h3><p class="thesis"><b>Тезис:</b> организации застревают не на модели, а на процессе.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a2.html"><div class="th"><span class="code">А2</span><span class="badge a">Зал 1</span><span class="dur">30 мин</span></div><h3>Международный контекст</h3><p class="thesis"><b>Тезис:</b> три сдвига и три регуляторных модели — остальное производные.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a31.html"><div class="th"><span class="code">А3.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Генеративное производство и результат рекламы</h3><p class="thesis"><b>Тезис:</b> ИИ удешевил ассет и удорожил ошибку в стратегии.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a32.html"><div class="th"><span class="code">А3.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Креатив подешевел — стратегия подорожала</h3><p class="thesis"><b>Тезис:</b> когда производство стремится к нулю, платят за различие.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a4.html"><div class="th"><span class="code">А4</span><span class="badge a">Зал 1</span><span class="dur">30 мин</span></div><h3>Продвижение в ответах нейронных сетей</h3><p class="thesis"><b>Тезис:</b> новый канал — не сайт, а сгенерированный ответ.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a5.html"><div class="th"><span class="code">А5</span><span class="badge a">Зал 1</span><span class="dur">55 мин</span></div><h3>Как ИИ меняет маркетинговую функцию и рынок услуг</h3><p class="thesis"><b>Тезис:</b> меньше производства — больше постановки, проверки и оркестрации.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a61.html"><div class="th"><span class="code">А6.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Кто управляет полкой: бренд, маркетплейс или ИИ-помощник</h3><p class="thesis"><b>Тезис:</b> полка стала алгоритмической — покупатель спрашивает, помощник выбирает.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a62.html"><div class="th"><span class="code">А6.2</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Человек-амфибия: навыки, система, культура</h3><p class="thesis"><b>Тезис:</b> ценность — на стыке экспертизы, данных и ИИ-грамотности.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a71.html"><div class="th"><span class="code">А7.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>ИИ не ассасин пиара, а экзоскелет</h3><p class="thesis"><b>Тезис:</b> ИИ усиливает того, кто думает, и ускоряет того, кто не думает.</p><span class="more">читать →</span></a>
+        <a class="talk a" href="talks/a72.html"><div class="th"><span class="code">А7.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>ИИ в PR — взгляд агентства</h3><p class="thesis"><b>Тезис:</b> клиенты просят скорость и объём, а платят за результат.</p><span class="more">читать →</span></a>
+      </div>
+    </section>
+
+    <section class="hall hall-b">
+      <div class="hall-head">
+        <div class="hall-num">02</div>
+        <div class="hall-title"><h2 class="sec">Зал 2 · «Как внедрять» <small>12:00–17:04</small></h2><p>Пилоты, данные, агенты, метрики — как доводить ИИ до продакшена</p></div>
+        <div class="hall-badge b">teal</div>
+      </div>
+      <div class="talks">
+        <a class="talk b" href="talks/b11.html"><div class="th"><span class="code">Б1.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Как выбрать задачу для внедрения</h3><p class="thesis"><b>Тезис:</b> выбирать надо не по вау-эффекту, а по частоте и обратной связи.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b12.html"><div class="th"><span class="code">Б1.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Почему пилоты ИИ умирают после демо</h3><p class="thesis"><b>Тезис:</b> пилот умирает не от плохой модели, а от отсутствия процесса.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b2.html"><div class="th"><span class="code">Б2</span><span class="badge b">Зал 2</span><span class="dur">30 мин</span></div><h3>Рабочая среда специалиста</h3><p class="thesis"><b>Тезис:</b> среда — это данные, модели, агенты, система записи, права и аудит. А не один чат.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b3.html"><div class="th"><span class="code">Б3</span><span class="badge b">Зал 2</span><span class="dur">30 мин</span></div><h3>Аналитика и прогнозирование</h3><p class="thesis"><b>Тезис:</b> качество прогноза определяется постановкой вопроса и данными, а не моделью.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b41.html"><div class="th"><span class="code">Б4.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Внутренние энтузиасты</h3><p class="thesis"><b>Тезис:</b> внедрение идёт снизу. Вопрос — управляемо оно или нет.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b42.html"><div class="th"><span class="code">Б4.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Теневой ИИ: что сотрудники уже используют</h3><p class="thesis"><b>Тезис:</b> запрет не работает. Работает быстрый доступ к разрешённому.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b5.html"><div class="th"><span class="code">Б5</span><span class="badge b">Зал 2</span><span class="dur">55 мин</span></div><h3>Чат-боты и агенты: от помощника до исполнителя</h3><p class="thesis"><b>Тезис:</b> разница между помощником и исполнителем — в правах и ответственности.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b61.html"><div class="th"><span class="code">Б6.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Маркетинг должен слышать клиента</h3><p class="thesis"><b>Тезис:</b> звонки и переписки — не архив, а поток инсайтов.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b62.html"><div class="th"><span class="code">Б6.2</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Рабочая среда команды: агенты, CRM, интерфейс</h3><p class="thesis"><b>Тезис:</b> агент встроен в процесс, а не приделан сбоку.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b71.html"><div class="th"><span class="code">Б7.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Экономика внедрения: полный расчёт</h3><p class="thesis"><b>Тезис:</b> считают лицензию, а платят за интеграцию, обучение и поддержку.</p><span class="more">читать →</span></a>
+        <a class="talk b" href="talks/b72.html"><div class="th"><span class="code">Б7.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Метрики внедрения ИИ</h3><p class="thesis"><b>Тезис:</b> использование — не эффект. Эффект — изменение в P&amp;L.</p><span class="more">читать →</span></a>
+      </div>
+    </section>
+
+    <section class="hall hall-s">
+      <div class="hall-head">
+        <div class="hall-num">03</div>
+        <div class="hall-title"><h2 class="sec">Общий финал <small>17:20–17:50 · 30 мин</small></h2><p>Когнитивный долг — мышление специалиста, когда делегируешь ИИ</p></div>
+        <div class="hall-badge s">общий зал</div>
+      </div>
+      <div class="talks">
+        <a class="talk wide hall-s" href="talks/o2.html"><div class="th"><span class="code">О2</span><span class="badge s">Общий зал</span><span class="dur">30 мин</span></div><h3>Когнитивный долг: мышление специалиста в работе с ИИ</h3><p class="thesis"><b>Тезис:</b> чем больше делегируем, тем дороже проверка — и тем меньше навык проверять.</p><span class="more">читать →</span></a>
+      </div>
+    </section>
+
+  </div><!-- /dashboard -->
+
+  <!-- ========== TIMELINE VIEW ========== -->
+  <div id="view-timeline" class="view" hidden>
+    <div class="timeline">
+
+      <div class="tl-group wide hall-s" data-slot="10:50">
+        <div class="tl-meta"><div class="tl-time">10:50 — 11:55</div><div class="tl-label">65′ · Общий старт</div></div>
+        <div class="tl-line"><span class="tl-dot s"></span></div>
+        <div class="tl-cards"><a class="talk wide hall-s" href="talks/o1.html"><div class="th"><span class="code">О1</span><span class="badge s">Общий зал</span><span class="dur">65 мин</span></div><h3>Как ИИ становится системой компании</h3><p class="thesis"><b>Тезис:</b> дефицит не в моделях, а в управляемости — владелец, данные, метрика, процесс.</p><span class="more">читать →</span></a></div>
+      </div>
+
+      <div class="tl-break"><span>☕ Пауза 5′ · переход в залы</span></div>
+
+      <div class="tl-group" data-slot="12:00">
+        <div class="tl-meta"><div class="tl-time">12:00 — 12:14</div><div class="tl-label">14′</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a11.html"><div class="th"><span class="code">А1.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Как ИИ меняет маркетинг: исследование</h3><p class="thesis"><b>Тезис:</b> «используем ИИ» и «получаем эффект» — разные факты.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b11.html"><div class="th"><span class="code">Б1.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Как выбрать задачу для внедрения</h3><p class="thesis"><b>Тезис:</b> выбирать надо не по вау-эффекту, а по частоте и обратной связи.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-group" data-slot="12:15">
+        <div class="tl-meta"><div class="tl-time">12:15 — 12:29</div><div class="tl-label">14′ · мой слот справа</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b mine"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a12.html"><div class="th"><span class="code">А1.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>ИИ-зрелость: почему одни получают эффект, а другие — только демо</h3><p class="thesis"><b>Тезис:</b> организации застревают не на модели, а на процессе.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b12.html"><div class="th"><span class="code">Б1.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Почему пилоты ИИ умирают после демо</h3><p class="thesis"><b>Тезис:</b> пилот умирает не от плохой модели, а от отсутствия процесса.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-break"><span>Перерыв 6′</span></div>
+
+      <div class="tl-group" data-slot="12:35">
+        <div class="tl-meta"><div class="tl-time">12:35 — 13:05</div><div class="tl-label">30′ · длинные доклады</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a2.html"><div class="th"><span class="code">А2</span><span class="badge a">Зал 1</span><span class="dur">30 мин</span></div><h3>Международный контекст</h3><p class="thesis"><b>Тезис:</b> три сдвига и три регуляторных модели — остальное производные.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b2.html"><div class="th"><span class="code">Б2</span><span class="badge b">Зал 2</span><span class="dur">30 мин</span></div><h3>Рабочая среда специалиста</h3><p class="thesis"><b>Тезис:</b> среда — это данные, модели, агенты, система записи, права и аудит. А не один чат.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-group" data-slot="13:10">
+        <div class="tl-meta"><div class="tl-time">13:10 — 13:24</div><div class="tl-label">14′ + 30′ справа</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b long"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a31.html"><div class="th"><span class="code">А3.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Генеративное производство и результат рекламы</h3><p class="thesis"><b>Тезис:</b> ИИ удешевил ассет и удорожил ошибку в стратегии.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b3.html"><div class="th"><span class="code">Б3</span><span class="badge b">Зал 2</span><span class="dur">30 мин</span></div><h3>Аналитика и прогнозирование</h3><p class="thesis"><b>Тезис:</b> качество прогноза определяется постановкой вопроса и данными, а не моделью.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-group" data-slot="13:25">
+        <div class="tl-meta"><div class="tl-time">13:25 — 13:39</div><div class="tl-label">14′ · мой слот слева</div></div>
+        <div class="tl-line"><span class="tl-dot a mine"></span><span class="tl-dot b ghost"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a32.html"><div class="th"><span class="code">А3.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Креатив подешевел — стратегия подорожала</h3><p class="thesis"><b>Тезис:</b> когда производство стремится к нулю, платят за различие.</p><span class="more">читать →</span></a>
+          <div class="talk ghost"><span>Продолжается Б3 до 13:40</span></div>
+        </div>
+      </div>
+
+      <div class="tl-break big"><span>Обед · 45′ · 13:40 — 14:25</span></div>
+
+      <div class="tl-group" data-slot="14:25">
+        <div class="tl-meta"><div class="tl-time">14:25 — 14:39</div><div class="tl-label">14′</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a4.html"><div class="th"><span class="code">А4</span><span class="badge a">Зал 1</span><span class="dur">30 мин</span></div><h3>Продвижение в ответах нейронных сетей</h3><p class="thesis"><b>Тезис:</b> новый канал — не сайт, а сгенерированный ответ.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b41.html"><div class="th"><span class="code">Б4.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Внутренние энтузиасты</h3><p class="thesis"><b>Тезис:</b> внедрение идёт снизу. Вопрос — управляемо оно или нет.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-group" data-slot="14:40">
+        <div class="tl-meta"><div class="tl-time">14:40 — 14:54</div><div class="tl-label">14′ · мой слот справа</div></div>
+        <div class="tl-line"><span class="tl-dot a ghost"></span><span class="tl-dot b mine"></span></div>
+        <div class="tl-cards cols2">
+          <div class="talk ghost"><span>Продолжается А4 до 14:55</span></div>
+          <a class="talk b" href="talks/b42.html"><div class="th"><span class="code">Б4.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Теневой ИИ: что сотрудники уже используют</h3><p class="thesis"><b>Тезис:</b> запрет не работает. Работает быстрый доступ к разрешённому.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-break"><span>Перерыв 5′</span></div>
+
+      <div class="tl-group" data-slot="15:00">
+        <div class="tl-meta"><div class="tl-time">15:00 — 15:55</div><div class="tl-label">55′ · панели</div></div>
+        <div class="tl-line"><span class="tl-dot a panel"></span><span class="tl-dot b panel"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a5.html"><div class="th"><span class="code">А5</span><span class="badge a">Зал 1</span><span class="dur">55 мин</span></div><h3>Как ИИ меняет маркетинговую функцию и рынок услуг</h3><p class="thesis"><b>Тезис:</b> меньше производства — больше постановки, проверки и оркестрации.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b5.html"><div class="th"><span class="code">Б5</span><span class="badge b">Зал 2</span><span class="dur">55 мин</span></div><h3>Чат-боты и агенты: от помощника до исполнителя</h3><p class="thesis"><b>Тезис:</b> разница между помощником и исполнителем — в правах и ответственности.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-break"><span>Перерыв 5′</span></div>
+
+      <div class="tl-group" data-slot="16:00">
+        <div class="tl-meta"><div class="tl-time">16:00 — 16:14</div><div class="tl-label">14′</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a61.html"><div class="th"><span class="code">А6.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Кто управляет полкой: бренд, маркетплейс или ИИ-помощник</h3><p class="thesis"><b>Тезис:</b> полка стала алгоритмической — покупатель спрашивает, помощник выбирает.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b61.html"><div class="th"><span class="code">Б6.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Маркетинг должен слышать клиента</h3><p class="thesis"><b>Тезис:</b> звонки и переписки — не архив, а поток инсайтов.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-group" data-slot="16:15">
+        <div class="tl-meta"><div class="tl-time">16:15 — 16:29</div><div class="tl-label">14′</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a62.html"><div class="th"><span class="code">А6.2</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Человек-амфибия: навыки, система, культура</h3><p class="thesis"><b>Тезис:</b> ценность — на стыке экспертизы, данных и ИИ-грамотности.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b62.html"><div class="th"><span class="code">Б6.2</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Рабочая среда команды: агенты, CRM, интерфейс</h3><p class="thesis"><b>Тезис:</b> агент встроен в процесс, а не приделан сбоку.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-break"><span>Перерыв 6′</span></div>
+
+      <div class="tl-group" data-slot="16:35">
+        <div class="tl-meta"><div class="tl-time">16:35 — 16:49</div><div class="tl-label">14′</div></div>
+        <div class="tl-line"><span class="tl-dot a"></span><span class="tl-dot b"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a71.html"><div class="th"><span class="code">А7.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>ИИ не ассасин пиара, а экзоскелет</h3><p class="thesis"><b>Тезис:</b> ИИ усиливает того, кто думает, и ускоряет того, кто не думает.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b71.html"><div class="th"><span class="code">Б7.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Экономика внедрения: полный расчёт</h3><p class="thesis"><b>Тезис:</b> считают лицензию, а платят за интеграцию, обучение и поддержку.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-group" data-slot="16:50">
+        <div class="tl-meta"><div class="tl-time">16:50 — 17:04</div><div class="tl-label">14′ · мои</div></div>
+        <div class="tl-line"><span class="tl-dot a mine"></span><span class="tl-dot b mine"></span></div>
+        <div class="tl-cards cols2">
+          <a class="talk a" href="talks/a72.html"><div class="th"><span class="code">А7.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>ИИ в PR — взгляд агентства</h3><p class="thesis"><b>Тезис:</b> клиенты просят скорость и объём, а платят за результат.</p><span class="more">читать →</span></a>
+          <a class="talk b" href="talks/b72.html"><div class="th"><span class="code">Б7.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Метрики внедрения ИИ</h3><p class="thesis"><b>Тезис:</b> использование — не эффект. Эффект — изменение в P&amp;L.</p><span class="more">читать →</span></a>
+        </div>
+      </div>
+
+      <div class="tl-break big"><span>Переход в общий зал · 16′</span></div>
+
+      <div class="tl-group wide hall-s" data-slot="17:20">
+        <div class="tl-meta"><div class="tl-time">17:20 — 17:50</div><div class="tl-label">30′ · Общий финал</div></div>
+        <div class="tl-line"><span class="tl-dot s"></span></div>
+        <div class="tl-cards"><a class="talk wide hall-s" href="talks/o2.html"><div class="th"><span class="code">О2</span><span class="badge s">Общий зал</span><span class="dur">30 мин</span></div><h3>Когнитивный долг: мышление специалиста в работе с ИИ</h3><p class="thesis"><b>Тезис:</b> чем больше делегируем, тем дороже проверка — и тем меньше навык проверять.</p><span class="more">читать →</span></a></div>
+      </div>
+
+    </div>
   </div>
 
-  <h2 class="sec hall-a">Зал 1 · «Что меняется» <small>12:00–17:04</small></h2>
-  <div class="talks">
-    <a class="talk a" href="talks/a11.html"><div class="th"><span class="code">А1.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Как ИИ меняет маркетинг: исследование</h3><p class="thesis"><b>Тезис:</b> «используем ИИ» и «получаем эффект» — разные факты.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a12.html"><div class="th"><span class="code">А1.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>ИИ-зрелость: почему одни получают эффект, а другие — только демо</h3><p class="thesis"><b>Тезис:</b> организации застревают не на модели, а на процессе.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a2.html"><div class="th"><span class="code">А2</span><span class="badge a">Зал 1</span><span class="dur">30 мин</span></div><h3>Международный контекст</h3><p class="thesis"><b>Тезис:</b> три сдвига и три регуляторных модели — остальное производные.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a31.html"><div class="th"><span class="code">А3.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Генеративное производство и результат рекламы</h3><p class="thesis"><b>Тезис:</b> ИИ удешевил ассет и удорожил ошибку в стратегии.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a32.html"><div class="th"><span class="code">А3.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Креатив подешевел — стратегия подорожала</h3><p class="thesis"><b>Тезис:</b> когда производство стремится к нулю, платят за различие.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a4.html"><div class="th"><span class="code">А4</span><span class="badge a">Зал 1</span><span class="dur">30 мин</span></div><h3>Продвижение в ответах нейронных сетей</h3><p class="thesis"><b>Тезис:</b> новый канал — не сайт, а сгенерированный ответ.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a5.html"><div class="th"><span class="code">А5</span><span class="badge a">Зал 1</span><span class="dur">55 мин</span></div><h3>Как ИИ меняет маркетинговую функцию и рынок услуг</h3><p class="thesis"><b>Тезис:</b> меньше производства — больше постановки, проверки и оркестрации.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a61.html"><div class="th"><span class="code">А6.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Кто управляет полкой: бренд, маркетплейс или ИИ-помощник</h3><p class="thesis"><b>Тезис:</b> полка стала алгоритмической — покупатель спрашивает, помощник выбирает.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a62.html"><div class="th"><span class="code">А6.2</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>Человек-амфибия: навыки, система, культура</h3><p class="thesis"><b>Тезис:</b> ценность — на стыке экспертизы, данных и ИИ-грамотности.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a71.html"><div class="th"><span class="code">А7.1</span><span class="badge a">Зал 1</span><span class="dur">14 мин</span></div><h3>ИИ не ассасин пиара, а экзоскелет</h3><p class="thesis"><b>Тезис:</b> ИИ усиливает того, кто думает, и ускоряет того, кто не думает.</p><span class="more">читать →</span></a>
-    <a class="talk a" href="talks/a72.html"><div class="th"><span class="code">А7.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>ИИ в PR — взгляд агентства</h3><p class="thesis"><b>Тезис:</b> клиенты просят скорость и объём, а платят за результат.</p><span class="more">читать →</span></a>
-  </div>
-
-  <h2 class="sec hall-b">Зал 2 · «Как внедрять» <small>12:00–17:04</small></h2>
-  <div class="talks">
-    <a class="talk b" href="talks/b11.html"><div class="th"><span class="code">Б1.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Как выбрать задачу для внедрения</h3><p class="thesis"><b>Тезис:</b> выбирать надо не по вау-эффекту, а по частоте и обратной связи.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b12.html"><div class="th"><span class="code">Б1.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Почему пилоты ИИ умирают после демо</h3><p class="thesis"><b>Тезис:</b> пилот умирает не от плохой модели, а от отсутствия процесса.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b2.html"><div class="th"><span class="code">Б2</span><span class="badge b">Зал 2</span><span class="dur">30 мин</span></div><h3>Рабочая среда специалиста</h3><p class="thesis"><b>Тезис:</b> среда — это данные, модели, агенты, система записи, права и аудит. А не один чат.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b3.html"><div class="th"><span class="code">Б3</span><span class="badge b">Зал 2</span><span class="dur">30 мин</span></div><h3>Аналитика и прогнозирование</h3><p class="thesis"><b>Тезис:</b> качество прогноза определяется постановкой вопроса и данными, а не моделью.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b41.html"><div class="th"><span class="code">Б4.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Внутренние энтузиасты</h3><p class="thesis"><b>Тезис:</b> внедрение идёт снизу. Вопрос — управляемо оно или нет.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b42.html"><div class="th"><span class="code">Б4.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Теневой ИИ: что сотрудники уже используют</h3><p class="thesis"><b>Тезис:</b> запрет не работает. Работает быстрый доступ к разрешённому.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b5.html"><div class="th"><span class="code">Б5</span><span class="badge b">Зал 2</span><span class="dur">55 мин</span></div><h3>Чат-боты и агенты: от помощника до исполнителя</h3><p class="thesis"><b>Тезис:</b> разница между помощником и исполнителем — в правах и ответственности.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b61.html"><div class="th"><span class="code">Б6.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Маркетинг должен слышать клиента</h3><p class="thesis"><b>Тезис:</b> звонки и переписки — не архив, а поток инсайтов.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b62.html"><div class="th"><span class="code">Б6.2</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Рабочая среда команды: агенты, CRM, интерфейс</h3><p class="thesis"><b>Тезис:</b> агент встроен в процесс, а не приделан сбоку.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b71.html"><div class="th"><span class="code">Б7.1</span><span class="badge b">Зал 2</span><span class="dur">14 мин</span></div><h3>Экономика внедрения: полный расчёт</h3><p class="thesis"><b>Тезис:</b> считают лицензию, а платят за интеграцию, обучение и поддержку.</p><span class="more">читать →</span></a>
-    <a class="talk b" href="talks/b72.html"><div class="th"><span class="code">Б7.2</span><span class="badge mine">мой вариант</span><span class="dur">14 мин</span></div><h3>Метрики внедрения ИИ</h3><p class="thesis"><b>Тезис:</b> использование — не эффект. Эффект — изменение в P&amp;L.</p><span class="more">читать →</span></a>
-  </div>
-
-  <h2 class="sec hall-s">Общий финал <small>17:20–17:50</small></h2>
-  <div class="talks">
-    <a class="talk wide" href="talks/o2.html"><div class="th"><span class="code">О2</span><span class="badge s">Общий зал</span><span class="dur">30 мин</span></div><h3>Когнитивный долг: мышление специалиста в работе с ИИ</h3><p class="thesis"><b>Тезис:</b> чем больше делегируем, тем дороже проверка — и тем меньше навык проверять.</p><span class="more">читать →</span></a>
-  </div>
+  <footer class="foot">ИИ для ии · 70 июля · Cola Club · 24 доклада · <a href="#" onclick="localStorage.clear();location.reload();return false">сбросить фильтры</a></footer>
 </main>
-<script src="app.js"></script>
+<script src="app.js?v=7"></script>
 </body></html>

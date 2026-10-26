@@ -141,12 +141,54 @@
     });
   }
 
+  // View Switcher (Dashboard vs Timeline)
+  var viewSwitch = document.querySelector('.view-switch');
+  var viewDash = document.getElementById('view-dashboard');
+  var viewTl = document.getElementById('view-timeline');
+  if (viewSwitch && viewDash && viewTl) {
+    var activeView = 'dashboard';
+    try {
+      var sv = localStorage.getItem('iivent-view');
+      if (sv === 'timeline' || sv === 'dashboard') activeView = sv;
+    } catch(e){}
+    // check ?view= param
+    try {
+      var vp = new URLSearchParams(location.search).get('view');
+      if (vp === 'timeline' || vp === 'dashboard') activeView = vp;
+    } catch(e){}
+
+    function setView(v){
+      activeView = v;
+      try { localStorage.setItem('iivent-view', v); } catch(e){}
+      var isTl = v === 'timeline';
+      viewDash.hidden = isTl;
+      viewTl.hidden = !isTl;
+      viewDash.classList.toggle('is-active', !isTl);
+      viewTl.classList.toggle('is-active', isTl);
+      viewSwitch.querySelectorAll('button').forEach(function(b){
+        var match = b.getAttribute('data-view') === v;
+        b.classList.toggle('is-active', match);
+        b.setAttribute('aria-selected', match ? 'true' : 'false');
+      });
+      // re-apply filters so hidden counts / states match the view
+      if (window._applyFilters) window._applyFilters();
+    }
+    viewSwitch.addEventListener('click', function(e){
+      var btn = e.target.closest('button[data-view]');
+      if (!btn) return;
+      var v = btn.getAttribute('data-view');
+      if (v) setView(v);
+    });
+    setView(activeView);
+  }
+
   // Index: filter + search
   var filterBar = document.querySelector('.filter-bar');
   var searchInput = document.getElementById('searchInput');
   if (filterBar || searchInput) {
-    var talks = Array.prototype.slice.call(document.querySelectorAll('.talk'));
-    var secs = Array.prototype.slice.call(document.querySelectorAll('h2.sec'));
+    var talks = Array.prototype.slice.call(document.querySelectorAll('.talk:not(.ghost)'));
+    var halls = Array.prototype.slice.call(document.querySelectorAll('.hall'));
+    var tlGroups = Array.prototype.slice.call(document.querySelectorAll('.tl-group'));
     var resultsInfo = document.getElementById('resultsInfo');
     var clearBtn = document.getElementById('clearSearch');
     var activeFilter = 'all';
@@ -163,8 +205,8 @@
 
     function matchesFilter(talk){
       if (activeFilter === 'all') return true;
-      if (activeFilter === 'a') return talk.classList.contains('a');
-      if (activeFilter === 'b') return talk.classList.contains('b');
+      if (activeFilter === 'a') return talk.classList.contains('a') || talk.classList.contains('hall-s');
+      if (activeFilter === 'b') return talk.classList.contains('b') || talk.classList.contains('hall-s');
       if (activeFilter === 'mine') return !!talk.querySelector('.badge.mine');
       return true;
     }
@@ -177,19 +219,23 @@
     }
     function apply(){
       var visible = 0;
+      // talks
       talks.forEach(function(t){
         var ok = matchesFilter(t) && matchesSearch(t);
         t.classList.toggle('is-hidden', !ok);
-        if (ok) visible++;
+        // count visible only in currently active view to avoid double-counting 24 * 2
+        var inActiveView = t.closest('.view') && !t.closest('.view').hidden;
+        if (ok && inActiveView) visible++;
       });
-      // hide sections with no visible talks
-      secs.forEach(function(sec){
-        var container = sec.nextElementSibling;
-        // container is .talks (maybe wrapped)
-        if (!container || !container.classList.contains('talks')) return;
-        var hasVisible = Array.prototype.slice.call(container.querySelectorAll('.talk')).some(function(t){ return !t.classList.contains('is-hidden'); });
-        sec.classList.toggle('is-hidden', !hasVisible);
-        container.style.display = hasVisible ? '' : 'none';
+      // hide dashboard halls
+      halls.forEach(function(h){
+        var hasVis = Array.prototype.slice.call(h.querySelectorAll('.talk')).some(function(t){ return !t.classList.contains('is-hidden'); });
+        h.classList.toggle('is-hidden', !hasVis);
+      });
+      // hide timeline groups
+      tlGroups.forEach(function(g){
+        var hasVis = Array.prototype.slice.call(g.querySelectorAll('.talk:not(.ghost)')).some(function(t){ return !t.classList.contains('is-hidden'); });
+        g.classList.toggle('is-hidden', !hasVis);
       });
       // buttons
       if (filterBar) filterBar.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('data-filter') === activeFilter); });
@@ -197,11 +243,12 @@
       if (resultsInfo) {
         if (searchQuery || activeFilter !== 'all') {
           var fLabel = activeFilter === 'all' ? '' : ' · фильтр: ' + (activeFilter==='a' ? 'Зал 1' : activeFilter==='b' ? 'Зал 2' : 'Мои');
-          resultsInfo.textContent = 'Показано ' + visible + ' из ' + talks.length + (searchQuery ? ' по запросу “' + searchQuery + '”' : '') + fLabel;
+          resultsInfo.textContent = 'Показано ' + visible + ' из 24' + (searchQuery ? ' по запросу “' + searchQuery + '”' : '') + fLabel;
         } else resultsInfo.textContent = '';
       }
       if (searchInput) searchInput.parentElement.classList.toggle('has-value', !!searchQuery);
     }
+    window._applyFilters = apply;
 
     if (filterBar) {
       filterBar.addEventListener('click', function(e){
