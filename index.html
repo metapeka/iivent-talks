@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=6">
 </head><body>
 <button class="fab" id="themeBtn" type="button" aria-label="Переключить тему">◐</button>
 <main class="wrap">
@@ -46,6 +46,21 @@
     <a class="b" href="talks/b71.html">Б7.1</a><a class="b" href="talks/b72.html">Б7.2</a>
     <a class="s" href="talks/o2.html">О2</a>
   </nav>
+
+  <div class="toolbar">
+    <div class="filter-bar" role="group" aria-label="Фильтр программы">
+      <button class="filter-btn is-active" data-filter="all" type="button">Все 24</button>
+      <button class="filter-btn" data-filter="a" type="button">Зал 1 · <span>Что меняется</span></button>
+      <button class="filter-btn" data-filter="b" type="button">Зал 2 · <span>Как внедрять</span></button>
+      <button class="filter-btn mine" data-filter="mine" type="button">★ Мои 6</button>
+    </div>
+    <label class="search-wrap" aria-label="Поиск">
+      <input id="searchInput" type="search" placeholder="Поиск по тезисам, заголовкам…" autocomplete="off" spellcheck="false">
+      <span class="search-icon">⌕</span>
+      <button class="search-clear" id="clearSearch" type="button" aria-label="Очистить поиск">×</button>
+    </label>
+  </div>
+  <div class="results-info" id="resultsInfo" aria-live="polite"></div>
 
   <h2 class="sec hall-s">Общий старт <small>10:50–11:55</small></h2>
   <div class="talks">
