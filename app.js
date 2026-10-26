@@ -10,32 +10,50 @@
     try { localStorage.setItem('iivent-theme', next); } catch(e){}
   });
 
+  // Reading progress bar for talk pages
+  var tp = document.querySelector('.tp');
+  if (tp) {
+    var bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    if (tp.classList.contains('hall-a')) bar.classList.add('a');
+    else if (tp.classList.contains('hall-b')) bar.classList.add('b');
+    else bar.classList.add('s');
+    document.body.appendChild(bar);
+    var ticking = false;
+    function upd(){
+      var sc = window.scrollY;
+      var dh = document.documentElement.scrollHeight - window.innerHeight;
+      var p = dh > 0 ? (sc / dh * 100) : 0;
+      bar.style.width = p + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking){ requestAnimationFrame(upd); ticking = true; }
+    }, {passive:true});
+    upd();
+  }
+
   // Expand bar on talk pages
   var tpBody = document.querySelector('.tp-body');
   if (tpBody) {
     var details = tpBody.querySelectorAll('details.extra');
     if (details.length) {
-      var bar = document.createElement('div');
-      bar.className = 'expand-bar';
-      bar.innerHTML = '<button type="button" data-act="open">Развернуть всё</button><button type="button" data-act="close">Свернуть</button>';
-      // insert before first part or after hook
+      var bar2 = document.createElement('div');
+      bar2.className = 'expand-bar';
+      bar2.innerHTML = '<button type="button" data-act="open">Развернуть всё</button><button type="button" data-act="close">Свернуть</button>';
       var hook = tpBody.querySelector('.hook');
-      if (hook && hook.nextSibling) hook.parentNode.insertBefore(bar, hook.nextSibling);
-      else tpBody.insertBefore(bar, tpBody.firstChild);
-
-      bar.addEventListener('click', function(e){
+      if (hook && hook.nextSibling) hook.parentNode.insertBefore(bar2, hook.nextSibling);
+      else tpBody.insertBefore(bar2, tpBody.firstChild);
+      bar2.addEventListener('click', function(e){
         var act = e.target.getAttribute('data-act');
         if (!act) return;
         details.forEach(function(d){ d.open = (act === 'open'); });
       });
-
-      // open details if hash points inside
       if (location.hash) {
         var target = document.querySelector(location.hash);
         if (target) {
           var d = target.closest('details');
           if (d) d.open = true;
-          // open details that contain target
           details.forEach(function(dd){ if (dd.contains(target)) dd.open = true; });
         }
       }
